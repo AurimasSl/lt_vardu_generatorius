@@ -7,6 +7,9 @@ import numpy as np
 import pandas as pd
 from torch.utils.data import DataLoader, Dataset
 
+file_path = 'myfile.txt'
+
+
 # Dataset and Model Definitions (Unchanged)
 class NameDataset(Dataset):
     def __init__(self, csv_file):
@@ -58,8 +61,9 @@ def sample_with_temperature(model, dataset, start_str='a', max_length=20, k=5, t
         return output_name
 
 # 1. Load datasets
-male_dataset = NameDataset('vyru_vardai_no_accents.txt')
-female_dataset = NameDataset('moteru_vardai_no_accents.txt')
+
+male_dataset = NameDataset('/namesformer/vyru_vardai_no_accents.txt'')
+female_dataset = NameDataset('/namesformer/moteru_vardai_no_accents.txt')
 
 # 2. Load pre-trained models
 male_model = MinimalTransformer(vocab_size=male_dataset.vocab_size, embed_size=128, num_heads=16)
