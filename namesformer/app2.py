@@ -62,7 +62,7 @@ def sample_with_temperature(model, dataset, start_str='a', max_length=20, k=5, t
 
 # 1. Load datasets
 
-male_dataset = NameDataset('/namesformer/vyru_vardai_no_accents.txt'')
+male_dataset = NameDataset('/namesformer/vyru_vardai_no_accents.txt')
 female_dataset = NameDataset('/namesformer/moteru_vardai_no_accents.txt')
 
 # 2. Load pre-trained models
